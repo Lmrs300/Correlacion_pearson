@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(136, 136, 136);
+  background-color: rgb(104, 104, 104);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 3em;
+  width: 100%;
+  font-family: "nunito", sans-serif, serif;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  background-color: rgb(179, 17, 179);
+  color: #fff;
+  width: 30%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+form {
+  margin: auto;
+  width: 90%;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+form ul {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin: 30px;
+}
+
+form ul li {
+  width: 30%;
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+}
+
+form ul li:first-of-type {
+  margin-left: -40px;
+}
+
+form textarea {
+  resize: none;
+  width: 100%;
+  height: auto;
+  font-family: inherit;
+  font-size: 0.9em;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px;
+}
+
+form input[type="number"] {
+  width: 100%;
+  font-size: 1em;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px;
+}
+
+form .div_submit {
+  text-align: center;
+}
+form input[type="submit"] {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 10px;
+  border: 0px;
+  border-radius: 10px;
+  background-color: rgb(201, 101, 252);
+  transition: all 0.3s ease;
+  margin-bottom: 50px;
+}
+
+form input[type="submit"]:hover {
+  background-color: rgb(179, 17, 179);
+}
+
+#div_radio {
+  margin: auto;
+  margin-top: -40px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#div_radio ul li {
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: rgb(179, 17, 179);
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+#div_radio ul li input {
+  margin-top: 10px;
+}
+
+.div_datos {
+  display: none;
+}
+
+ul {
+  margin: auto;
+  width: 95%;
+  text-align: center;
+}
+
+ul li {
+  background-color: #c7c7c7;
+  background-color: rgb(201, 101, 252);
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 1.1em;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 1em;
+}
+
+.titulo_tabla {
+  border-bottom: 1px solid #c7c7c7;
+  font-size: 1.5em;
+}
+
+table thead th {
+  padding: 5px 0px;
+  background: rgb(163, 1, 163);
+  border-right: 1px solid #c7c7c7;
+  color: #fff;
+  font-size: 1.05em;
+}
+
+table thead th:last-of-type {
+  border-right: none;
+}
+
+table tbody tr {
+  background-color: white;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3d5;
+}
+
+table tbody tr td {
+  padding: 10px 5px;
+  border-right: 1px solid #c7c7c7;
+}
+
+table tbody tr td:last-of-type {
+  border-right: none;
+}
+
+.td_sum {
+  padding: 5px 0px;
+  background: rgb(163, 1, 163);
+  color: #fff;
+  font-size: 1.05em;
+}
