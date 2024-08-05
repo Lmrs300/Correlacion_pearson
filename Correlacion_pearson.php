@@ -33,7 +33,7 @@ if (isset($_POST["datosx"])) {
 
     for ($i = 0; $i < count($datosy); $i++) {
         if (!is_numeric($datosy[$i])) {
-            $error = "Error: Los valores ingresados, unicamente deben ser números.";
+            $error = "Error: Los valores ingresados unicamente deben ser números.";
             break;
         }
     }
