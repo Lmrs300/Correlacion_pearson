@@ -4,9 +4,43 @@
 include("funciones.php");
 
 if (isset($_POST["datosx"])) {
+    if (isset($error)) {
+        unset($error);
+    }
+
     $datosx = explode(",", $_POST["datosx"]);
 
+    $datosx = array_filter($datosx, function ($datox) {
+        return trim($datox) !== "";
+    });
+
+    $datosx = array_values($datosx);
+
+    for ($i = 0; $i < count($datosx); $i++) {
+        if (!is_numeric($datosx[$i])) {
+            $error = "Error: Los valores ingresados, unicamente deben ser números.";
+            break;
+        }
+    }
+
     $datosy = explode(",", $_POST["datosy"]);
+
+    $datosy = array_filter($datosy, function ($datoy) {
+        return trim($datoy) !== "";
+    });
+
+    $datosy = array_values($datosy);
+
+    for ($i = 0; $i < count($datosy); $i++) {
+        if (!is_numeric($datosy[$i])) {
+            $error = "Error: Los valores ingresados, unicamente deben ser números.";
+            break;
+        }
+    }
+
+    if (count($datosx) != count($datosy)) {
+        $error = "Error: Ambos conjuntos de datos deben tener la misma cantidad de datos.";
+    }
 }
 
 
@@ -36,7 +70,7 @@ if (isset($_POST["datosx"])) {
 //$datosy = [300, 302, 315, 330, 300, 250, 300, 340, 315, 330, 310, 240];
 
 
-if (isset($_POST["datosx"])) {
+if (isset($_POST["datosx"]) && !isset($error)) {
     $xy = calc_xy($datosx, $datosy);
 
     $x2 = calc_x2_y2($datosx);
@@ -63,13 +97,27 @@ if (isset($_POST["datosx"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Correlacion de Pearson</title>
+    <title>Correlación de Pearson</title>
     <link rel="stylesheet" href="estilos.css?v=<?php echo (rand()); ?>" />
     <script src="/js/mi_script.js?v=<?php echo (rand()); ?>"></script>
 </head>
 
 <body>
-    <h1 id="titulo">Correlacion de Pearson</h1>
+    <h1 id="titulo">Correlación de Pearson</h1>
+
+    <?php
+    if (isset($error)) {
+    ?>
+
+        <div class="cont_error">
+            <div class="error">
+                <?php echo $error ?>
+            </div>
+        </div>
+
+    <?php
+    }
+    ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
         <label for="datosx">
@@ -86,7 +134,7 @@ if (isset($_POST["datosx"])) {
 
     </form>
 
-    <?php if (isset($_POST["datosx"]) && isset($_POST["datosy"])) { ?>
+    <?php if (isset($_POST["datosx"]) && isset($_POST["datosy"]) && !isset($error)) { ?>
         <div id="div_result">
             <?php
             if (isset($datosx, $datosy)) {

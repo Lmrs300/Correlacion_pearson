@@ -29,6 +29,23 @@ h1 {
   padding: 10px;
 }
 
+.cont_error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+.cont_error .error {
+  border: 3px solid rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 10px;
+  width: fit-content;
+  color: white;
+  padding: 5px;
+}
+
 form {
   margin: auto;
   width: 90%;
